@@ -1,20 +1,14 @@
 [
   {
-    "A": "apple"
+    "2 + 2": "4"
   },
   {
-    "B": "bag"
+    "2 + 1": "3"
   },
   {
-    "S": "shop"
+    "1 + 2": "3"
   },
   {
-    "T": "the"
-  },
-  {
-    "the shop": "my brother"
-  },
-  {
-    "a never used": "<:>terminating rule"
+    "3 + 2": "5"
   }
 ]

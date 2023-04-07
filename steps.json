@@ -1,27 +1,12 @@
 [
   [
-    "I bought a B of As from T S.",
-    "I bought a B of apples from T S.",
-    "A -> apple"
+    "12 + 1 + 2",
+    "13 + 2",
+    "2 + 1 -> 3"
   ],
   [
-    "I bought a B of apples from T S.",
-    "I bought a bag of apples from T S.",
-    "B -> bag"
-  ],
-  [
-    "I bought a bag of apples from T S.",
-    "I bought a bag of apples from T shop.",
-    "S -> shop"
-  ],
-  [
-    "I bought a bag of apples from T shop.",
-    "I bought a bag of apples from the shop.",
-    "T -> the"
-  ],
-  [
-    "I bought a bag of apples from the shop.",
-    "I bought a bag of apples from my brother.",
-    "the shop -> my brother"
+    "13 + 2",
+    "15",
+    "3 + 2 -> 5"
   ]
 ]

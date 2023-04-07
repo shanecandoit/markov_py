@@ -104,6 +104,14 @@ def save_rules(rules: list, filename: str):
 
 if __name__ == '__main__':
 
+    rules = ''' 2 + 2 -> 4
+    2 + 1 -> 3
+    1 + 2 -> 3
+    3 + 2 -> 5
+    '''
+
+    sample = '12 + 1 + 2'
+
     rules = list_rules(rules)
     print(f'rules {rules}')
 
