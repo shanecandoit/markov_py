@@ -88,10 +88,11 @@ def markov(rules_map: dict, sample: str) -> str:
     return sample
 
 
-def save_sorted_rules(rules: dict, filename: str):
-    rules = dict(sorted(rules.items()))
+def save_rules(rules: list, filename: str):
+    # rules = rules
+    rule_pairs = [{k:v} for k,v in parse_rules(rules).items()]
     with open(filename, 'w') as f:
-        json.dump(rules, f, indent=2)
+        json.dump(rule_pairs, f, indent=2)
 
 
 if __name__ == '__main__':
@@ -103,7 +104,37 @@ if __name__ == '__main__':
     print(f'rules_map {rules_map}')
 
     # save sorted rules to a file
-    save_sorted_rules(rules_map, 'rules.json')
+    save_rules(rules, 'rules.json')
 
     result = markov(rules_map, sample)
     print(f'result {result}')
+
+''' 
+DONE
+we save the rules
+remember to preserve the order
+
+we save the steps
+
+TODO
+
+save the result
+save hash of the rules
+save hash of the steps
+save hash of the result
+
+allow to wrap tokens in a class
+like a regex
+:number :== [123456789][1234567890]*
+
+that way we can do something like
+:numer:1 + :number:2 -> add(:number:1, :number:2)
+
+using something like backus naur form
+
+DONT DO THIS
+use regex instead
+there should be a way to optimize this
+so that we only try rules that are applicable
+
+'''
