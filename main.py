@@ -3,6 +3,7 @@
 # https://en.wikipedia.org/wiki/Markov_algorithm
 
 import json
+import hashlib
 
 rules = '''
 A -> apple
@@ -16,6 +17,12 @@ a never used => terminating rule
 TERM_SYMBOL = '<:>'
 
 sample = 'I bought a B of As from T S.'
+
+
+def hash_file(filename: str) -> str:
+    """ Return the hash of a file. """
+    with open(filename, 'rb') as f:
+        return hashlib.sha256(f.read()).hexdigest()
 
 
 def list_rules(rules: str) -> list:
@@ -109,32 +116,17 @@ if __name__ == '__main__':
     result = markov(rules_map, sample)
     print(f'result {result}')
 
-''' 
-DONE
-we save the rules
-remember to preserve the order
+    # save the input and result
+    with open('result.json', 'w') as f:
+        json.dump([sample, result], 
+            f, indent=2)
 
-we save the steps
-
-TODO
-
-save the result
-save hash of the rules
-save hash of the steps
-save hash of the result
-
-allow to wrap tokens in a class
-like a regex
-:number :== [123456789][1234567890]*
-
-that way we can do something like
-:numer:1 + :number:2 -> add(:number:1, :number:2)
-
-using something like backus naur form
-
-DONT DO THIS
-use regex instead
-there should be a way to optimize this
-so that we only try rules that are applicable
-
-'''
+    with open('hashes.json', 'w') as f:
+        result = hash_file('result.json')
+        steps = hash_file('steps.json')
+        rules = hash_file('rules.json')
+        json.dump({
+            'rules': rules,
+            'steps': steps,
+            'result':result,
+        }, f, indent=2)
