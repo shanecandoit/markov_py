@@ -1,0 +1,27 @@
+[
+  [
+    "I bought a B of As from T S.",
+    "I bought a B of apples from T S.",
+    "A -> apple"
+  ],
+  [
+    "I bought a B of apples from T S.",
+    "I bought a bag of apples from T S.",
+    "B -> bag"
+  ],
+  [
+    "I bought a bag of apples from T S.",
+    "I bought a bag of apples from T shop.",
+    "S -> shop"
+  ],
+  [
+    "I bought a bag of apples from T shop.",
+    "I bought a bag of apples from the shop.",
+    "T -> the"
+  ],
+  [
+    "I bought a bag of apples from the shop.",
+    "I bought a bag of apples from my brother.",
+    "the shop -> my brother"
+  ]
+]
